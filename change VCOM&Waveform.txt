@@ -1,0 +1,21 @@
+# to change vcom voltage
+1. adb devices
+2. adb shell
+3. echo xxx > /sys/devices/platform/tps6518x_sensor.0/vcom_value
+    eg:       echo 183 > /sys/devices/platform/tps6518x_sensor.0/vcom_value
+
+# waveform
+1. adb devices
+2. adb shell
+3. 拷贝对应的waveform 文件到设备的flash   
+4.           busybox mount -o rw,remount /vendor
+5.           busybox cp /mnt/sdcard/XXX.fw /vendor/firmware/imx/epdc.fw  
+ eg:        busybox cp /mnt/sdcard/V220_C215_68_WC3132_ED068OG1_CTC.fw     /vendor/firmware/imx/epdc.fw  
+
+               busybox cp /mnt/sdcard/V220_C208_68_WC1531_ED068OG1_CTC.fw     /vendor/firmware/imx/epdc.fw  
+               busybox cp /mnt/sdcard/V220_C172_68_WC9721_ED068OG1_CTC.fw     /vendor/firmware/imx/epdc.fw  
+               busybox cp /mnt/sdcard/V220_C073_97_WJ9601_OC4_BTC.fw     /vendor/firmware/imx/epdc.fw 
+
+               busybox cp /mnt/sdcard/V220_C073_97_WNA301_ED097OC4_BTC.fw     /vendor/firmware/imx/epdc.fw 
+               busybox cp /mnt/sdcard/V220_C222_68_WC4431_ED068OG1H2_CTC.fw     /vendor/firmware/imx/epdc.fw
+               busybox cp /mnt/sdcard/V220_C212_97_WN2641_ED097OD2_CTC.fw     /vendor/firmware/imx/epdc.fw
